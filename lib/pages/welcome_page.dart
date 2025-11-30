@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:luna/data/notifiers.dart';
+import 'package:luna/pages/auth/register_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -79,7 +80,16 @@ class WelcomePage extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: FilledButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return RegisterPage();
+                                  },
+                                ),
+                              );
+                            },
                             style: FilledButton.styleFrom(
                               padding: EdgeInsets.symmetric(vertical: 16),
                               shape: RoundedRectangleBorder(
