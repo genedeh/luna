@@ -2,20 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:luna/data/notifiers.dart' show isDarkModeNotifier;
 import 'package:luna/widgets/form_widgets/input/email_field_widget.dart';
 import 'package:luna/widgets/form_widgets/input/password_field_widget.dart';
-import 'package:luna/widgets/form_widgets/input/username_field_widget.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController usernameController = TextEditingController(
-    text: 'user',
-  );
   final TextEditingController emailController = TextEditingController(
     text: 'example.user@gmail.com',
   );
@@ -59,7 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     Center(
                       child: Text(
-                        "Get Started",
+                        "Welcome Back",
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
@@ -72,7 +68,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          UsernameField(controller: usernameController),
                           EmailField(controller: emailController),
                           PasswordField(controller: passwordController),
                           SizedBox(height: 32),
@@ -91,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                               ),
                               child: Text(
-                                "Get Started",
+                                "Login",
                                 style: TextStyle(fontSize: 16),
                               ),
                             ),

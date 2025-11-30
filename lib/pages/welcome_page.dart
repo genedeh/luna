@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:luna/data/notifiers.dart';
+import 'package:luna/pages/auth/login_page.dart';
 import 'package:luna/pages/auth/register_page.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -106,7 +107,16 @@ class WelcomePage extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return LoginPage();
+                                  },
+                                ),
+                              );
+                            },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.symmetric(vertical: 10),
                               shape: RoundedRectangleBorder(
