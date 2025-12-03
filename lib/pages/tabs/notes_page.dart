@@ -52,7 +52,7 @@ class NotesPage extends StatelessWidget {
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.search_rounded, size: 35),
+                            icon: const Icon(Icons.settings_rounded, size: 35),
                           ),
                         ],
                       ),

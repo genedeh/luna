@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:luna/widgets/note_card_widget.dart';
+import 'package:luna/widgets/search_widget.dart';
 
 class NotesLayout extends StatefulWidget {
   const NotesLayout({super.key});
@@ -17,6 +18,8 @@ class _NotesLayoutState extends State<NotesLayout> {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
+          SearchWidget(),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
