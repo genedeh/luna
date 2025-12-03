@@ -18,6 +18,7 @@ class NavbarWidget extends StatelessWidget {
           builder: (context, selectedPage, _) {
             return BottomAppBar(
               shape: const CircularNotchedRectangle(),
+              
               notchMargin: 30,
               color: bg,
               elevation: 40,
