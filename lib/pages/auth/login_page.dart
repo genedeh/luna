@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: bgColor,
                     child: SizedBox(
                       width: double.infinity,
+                      height: 500,
                       child: Image.asset(
                         isDarkMode
                             ? 'assets/images/welcome_dark.png'
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Container(
                   padding: EdgeInsets.all(24),
-                  height: 700,
+                  height: 600,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(50),

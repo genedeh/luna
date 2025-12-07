@@ -45,7 +45,7 @@ class _SearchWidgetState extends State<SearchWidget> {
           leading: Icon(Icons.search_rounded, color: iconColor),
 
           padding: WidgetStatePropertyAll(
-            const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
           ),
 
           shape: WidgetStatePropertyAll(
