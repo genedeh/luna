@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:luna/data/notifiers.dart';
+import 'package:luna/utils/show_toast.dart';
+import 'package:luna/widgets/toast_widget.dart';
 
 class TakeNotePage extends StatefulWidget {
   const TakeNotePage({super.key});
@@ -328,7 +330,28 @@ class _TakeNotePageState extends State<TakeNotePage>
                             IconButton(
                               splashRadius: 22,
                               icon: Icon(Icons.done_rounded, color: iconColor),
-                              onPressed: () => selectedPageNotifier.value = 0,
+                              onPressed: () {
+                                if (_noteTitleController.text.isNotEmpty &&
+                                    _controller.getPlainText().isNotEmpty) {
+                                  showToast(
+                                    context,
+                                    title: "Saved!",
+                                    description:
+                                        "Your note has been stored successfully.",
+                                    type: 0,
+                                    isDarkMode: isDarkModeNotifier.value,
+                                  );
+                                  selectedPageNotifier.value = 0;
+                                } else {
+                                  showToast(
+                                    context,
+                                    title: "Take a note",
+                                    description: "Write Something",
+                                    type: 1,
+                                    isDarkMode: isDarkModeNotifier.value,
+                                  );
+                                }
+                              },
                             ),
                           ],
                         ),
