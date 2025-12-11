@@ -15,6 +15,7 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   DateTime _currentMonth = DateTime.now();
   DateTime? _selectedDate = DateTime.now();
+  double get height => MediaQuery.of(context).size.height;
 
   List<Widget> _buildWeekDays(bool isDarkMode) {
     final days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -86,11 +87,13 @@ class _CalendarPageState extends State<CalendarPage> {
                         shape: BoxShape.circle,
                       ),
                       child: Center(
-                        child: Text(
-                          date?.day.toString() ?? "",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
+                        child: FittedBox(
+                          child: Text(
+                            date?.day.toString() ?? "",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
@@ -122,7 +125,7 @@ class _CalendarPageState extends State<CalendarPage> {
           ),
           padding: const EdgeInsets.all(20),
           child: SizedBox(
-            height: 370,
+            height: height * 0.36,
             child: Stack(
               children: [
                 Column(
@@ -220,7 +223,7 @@ class _CalendarPageState extends State<CalendarPage> {
           body: SafeArea(
             child: Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(14),
               child: Column(
                 children: [
                   Row(
@@ -255,7 +258,7 @@ class _CalendarPageState extends State<CalendarPage> {
                           child: Text(
                             DateFormat.yMMMM().format(_currentMonth),
                             style: TextStyle(
-                              fontSize: 28,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -318,7 +321,10 @@ class _CalendarPageState extends State<CalendarPage> {
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Column(children: _buildCalendarDays(isDarkMode)),
+                    child: SizedBox(
+                      height: height * 0.35,
+                      child: Column(children: _buildCalendarDays(isDarkMode)),
+                    ),
                   ),
                 ],
               ),
